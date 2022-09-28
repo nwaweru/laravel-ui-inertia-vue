@@ -1,10 +1,10 @@
 <template>
-    <Head title="Register" />
+    <Head title="Create Account" />
 
     <div class="container">
         <div class="row justify-content-center vh-100 d-flex align-items-center">
             <div class="col-12 col-md-4">
-                <h1 class="text-center">Register</h1>
+                <h1 class="text-center">Create Account</h1>
                 <form @submit.prevent="submit">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -52,9 +52,7 @@ export default {
 
     methods: {
         submit() {
-            this.form.post(route('register'), {
-                onFinish: () => this.form.reset('password'),
-            });
+            this.form.post(route('register'));
         }
     }
 };

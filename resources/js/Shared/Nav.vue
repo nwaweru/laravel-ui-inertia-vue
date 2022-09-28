@@ -35,7 +35,7 @@
                             <Link class="nav-link" :href="route('login')">Login</Link>
                         </li>
                         <li v-if="$page.props.auth.canRegister" class="nav-item">
-                            <Link class="nav-link" :href="route('register')">Register</Link>
+                            <Link class="nav-link" :href="route('register')">Create Account</Link>
                         </li>
                     </template>
                 </ul>
