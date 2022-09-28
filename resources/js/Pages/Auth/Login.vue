@@ -8,7 +8,7 @@
                 <form @submit.prevent="submit">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input id="email" name="email" type="email" class="form-control" placeholder="Enter Email" v-model="form.email">
+                        <input id="email" name="email" type="email" class="form-control" placeholder="Enter Email" v-model="form.email" autofocus>
                         <span v-if="form.errors.email" v-text="form.errors.email" class="text-danger text-sm"></span>
                     </div>
                     <div class="mb-3">
