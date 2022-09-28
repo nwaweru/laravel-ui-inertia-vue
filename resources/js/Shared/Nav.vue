@@ -14,7 +14,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                {{ $page.props.auth.user.name }}
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -24,6 +24,9 @@
                                 </li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <Link class="nav-link" :href="route('logout')" method="post" as="button">Logout</Link>
                         </li>
                     </template>
 

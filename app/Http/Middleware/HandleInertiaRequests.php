@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Middleware;
@@ -44,12 +45,15 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'canLogin' => Route::has('login'),
                 'canRegister' => Route::has('register'),
+                'canResetPassword' => Route::has('password.request'),
                 'user' => $request->user() ? [
                     'name' => $request->user()->name,
                 ] : null,
             ],
             'env' => [
                 'APP_NAME' => config('app.name'),
+                'LARAVEL_VERSION' => Application::VERSION,
+                'PHP_VERSION' => PHP_VERSION,
             ],
         ]);
     }

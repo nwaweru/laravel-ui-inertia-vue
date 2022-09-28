@@ -4,6 +4,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
 import Layout from './Shared/Layout.vue';
 
@@ -13,7 +14,7 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
 
     resolve: async name => {
-        let page = (await import(`./Pages/${name}.vue`)).default;
+        let page = (await resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'))).default;
 
         if (page.layout === undefined) {
             page.layout = Layout;
