@@ -22,7 +22,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><Link class="dropdown-item" :href="route('users.edit', { id: $page.props.auth.user.id})">Edit Profile</Link></li>
                             </ul>
                         </li>
                         <li class="nav-item">

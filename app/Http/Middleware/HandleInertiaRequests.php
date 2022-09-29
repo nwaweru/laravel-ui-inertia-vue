@@ -47,6 +47,7 @@ class HandleInertiaRequests extends Middleware
                 'canRegister' => Route::has('register'),
                 'canResetPassword' => Route::has('password.request'),
                 'user' => $request->user() ? [
+                    'id' => $request->user()->id,
                     'name' => $request->user()->name,
                 ] : null,
             ],
