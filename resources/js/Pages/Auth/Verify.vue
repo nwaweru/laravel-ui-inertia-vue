@@ -7,7 +7,7 @@
                 <div class="card mt-5">
                     <div class="card-header">Verify Your Email Address</div>
                     <div class="card-body">
-                        <div v-if="$page.props.flash.resent" class="alert alert-success" role="alert">
+                        <div v-if="flash.resent" class="alert alert-success" role="alert">
                             A fresh verification link has been sent to your email address.
                         </div>
 
@@ -21,3 +21,11 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+        flash: Object
+    }
+}
+</script>
